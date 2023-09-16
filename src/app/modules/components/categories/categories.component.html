@@ -1,0 +1,20 @@
+<!-- Categories -->
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 d-flex justify-content-center">
+      <div>
+        <table>
+            <ng-container *ngFor="let row of names; let i = index">
+              <tr *ngIf="i % 3 === 0">
+                <ng-container *ngFor="let name of names.slice(i, i + 4); let j = index">
+                  <td>{{ name }}</td>
+                </ng-container>
+              </tr>
+            </ng-container>
+          </table>
+          
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+<!-- Categories -->
