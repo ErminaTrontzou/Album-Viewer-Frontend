@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { faFacebookF, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
+
 
 @Component({
   selector: 'app-footer',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
+  faFacebookF = faFacebookF;
+  faInstagram = faInstagram;
+  faGithub = faGithub; 
 
 }
