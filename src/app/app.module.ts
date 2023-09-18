@@ -22,6 +22,7 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModulesModule } from './modules/modules.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { ModulesModule } from './modules/modules.module';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
+    HttpClientModule,
     ModulesModule,
     FontAwesomeModule,
     MdbAccordionModule,
