@@ -8,6 +8,7 @@ import { CategoriesService } from '../../services/categories-service';
 })
 export class CategoriesComponent implements OnInit{
   categories: string[] = [];
+  errorMessage: string = ''; // Initialize the error message variable
 
   constructor(private categoriesService: CategoriesService) {}
 
@@ -16,9 +17,13 @@ export class CategoriesComponent implements OnInit{
   }
 
   fetchCategories() {
-    this.categoriesService.getCategories().subscribe((data) => {
-      this.categories = data;
-    });
+    this.categoriesService.getCategories().subscribe(
+      (data) => {
+        this.categories = data;
+      },
+      (error) => {
+        this.errorMessage = 'Problem with obtaining categories from backend'; // Set the error message
+      }
+    );
   }
-
 }

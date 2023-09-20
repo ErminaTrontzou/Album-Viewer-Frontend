@@ -1,22 +1,25 @@
 <!-- Categories -->
 <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6 d-flex justify-content-center">
-      <div>
-        <h3>Categories</h3>
-        <br>
-        <table>
-          <ng-container *ngFor="let row of categories; let i = index">
-            <tr *ngIf="i % 3 === 0">
-              <ng-container *ngFor="let category of categories.slice(i, i + 3); let j = index">
-                <td class="custom-padding">{{ category | uppercase }}</td>
-              </ng-container>
-            </tr>
-          </ng-container>
-          </table>
-          
+  <div class="col-md-3"></div>
+  <div class="col-md-6 d-flex justify-content-center">
+    <div>
+      <h3>Categories</h3>
+      <br>
+      <div class =" errorMessage" *ngIf="errorMessage">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p>{{ errorMessage }}</p>
       </div>
+      <table *ngIf="!errorMessage">
+        <ng-container *ngFor="let row of categories; let i = index">
+          <tr *ngIf="i % 3 === 0">
+            <ng-container *ngFor="let category of categories.slice(i, i + 3); let j = index">
+              <td class="custom-padding">{{ category | uppercase }}</td>
+            </ng-container>
+          </tr>
+        </ng-container>
+      </table>
     </div>
-    <div class="col-md-3"></div>
+  </div>
+  <div class="col-md-3"></div>
 </div>
 <!-- Categories -->
