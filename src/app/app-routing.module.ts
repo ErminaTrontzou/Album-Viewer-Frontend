@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './modules/components/home/home.component';
+import { HomeComponent } from './modules/pages/home/home.component';
+import { AlbumsComponent } from './modules/pages/albums/albums.component';
+import { ArtistsComponent } from './modules/pages/artists/artists.component';
 
 const routes: Routes = [
   {
@@ -9,6 +11,15 @@ const routes: Routes = [
   },
   {
     path: 'albums',
+    component: AlbumsComponent
+  },
+  {
+    path: 'artists',
+    component: ArtistsComponent
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
 

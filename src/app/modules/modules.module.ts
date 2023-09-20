@@ -2,7 +2,9 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AboutComponent } from './components/about/about.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AlbumsComponent } from './pages/albums/albums.component';
+import { ArtistsComponent } from './pages/artists/artists.component';
 
 
 
@@ -10,12 +12,16 @@ import { HomeComponent } from './components/home/home.component';
   declarations: [
     CategoriesComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    AlbumsComponent,
+    ArtistsComponent
   ],
   exports: [
     CategoriesComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    AlbumsComponent,
+    ArtistsComponent
   ],
   imports: [
     CommonModule
