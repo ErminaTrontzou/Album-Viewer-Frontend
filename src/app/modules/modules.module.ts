@@ -2,17 +2,20 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AboutComponent } from './components/about/about.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
 @NgModule({
   declarations: [
     CategoriesComponent,
-    AboutComponent
+    AboutComponent,
+    HomeComponent
   ],
   exports: [
     CategoriesComponent,
-    AboutComponent
+    AboutComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule
