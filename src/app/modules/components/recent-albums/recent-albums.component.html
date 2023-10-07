@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6 d-flex justify-content-center">
+    <div>
+      <h3>Recent Albums</h3>
+      <br>
+      <div class="errorMessage" *ngIf="errorMessage">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p>{{ errorMessage }}</p>
+      </div>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let recentAlbum of recentAlbums">
+          <div class="card h-100">
+            <!-- Add anchor element here with routerLink -->
+            <a [routerLink]="['/album', recentAlbum.id]">
+              <img [src]="recentAlbum.imagePath" class="card-img-top" alt="Album cover"/>
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">{{ recentAlbum.name }}</h5>
+              <p class="card-text">{{ recentAlbum.artistName }}</p>
+              <p class="card-text">{{ recentAlbum.releaseDate }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>

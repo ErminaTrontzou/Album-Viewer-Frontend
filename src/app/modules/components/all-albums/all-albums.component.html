@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 d-flex justify-content-center">
+      <div>
+        <h2>Albums</h2>
+        <br>
+        <div class="errorMessage" *ngIf="errorMessage">
+          <i class="fas fa-exclamation-triangle"></i>
+          <p>{{ errorMessage }}</p>
+        </div>
+        <div class="row row-cols-2 ">
+          <div class="col" *ngFor="let album of allAlbums | paginate: { itemsPerPage: pageSize, currentPage: page }">
+            <div class="card h-100">
+              <a [routerLink]="['/album', album.id]">
+                <img [src]="album.imagePath" class="card-img-top" alt="Album cover"/>
+              </a>              <div class="card-body">
+                <h5 class="card-title">{{ album.name }}</h5>
+                <p class="card-text">{{ album.artistName }}</p>
+                <p class="card-text">{{ album.releaseDate }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+  <div class="pagination">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
