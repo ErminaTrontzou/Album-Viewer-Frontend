@@ -9,7 +9,7 @@
           <p>{{ errorMessage }}</p>
         </div>
         <div class="row row-cols-2 ">
-          <div class="col" *ngFor="let album of allAlbums | paginate: { itemsPerPage: pageSize, currentPage: page }">
+          <div class="col col-of-card" *ngFor="let album of allAlbums | paginate: { itemsPerPage: pageSize, currentPage: page }">
             <div class="card h-100">
               <a [routerLink]="['/album', album.id]">
                 <img [src]="album.imagePath" class="card-img-top" alt="Album cover"/>

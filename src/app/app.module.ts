@@ -4,6 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModulesModule } from './modules/modules.module';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
@@ -20,10 +24,7 @@ import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ModulesModule } from './modules/modules.module';
-import { HttpClientModule } from '@angular/common/http';
-import { NgxPaginationModule } from 'ngx-pagination';
+
 
 
 
@@ -36,6 +37,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AppRoutingModule,
     CoreModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    NgxPaginationModule,
     ModulesModule,
     FontAwesomeModule,
     MdbAccordionModule,
@@ -52,9 +55,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MdbScrollspyModule,
     MdbTabsModule,
     MdbTooltipModule,
-    MdbValidationModule,
-    BrowserAnimationsModule,
-    NgxPaginationModule
+    MdbValidationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

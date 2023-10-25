@@ -11,6 +11,8 @@ import { AllAlbumsComponent } from './components/all-albums/all-albums.component
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AlbumComponent } from './pages/album/album.component';
 import { SingleAlbumComponent } from './components/single-album/single-album.component';
+import { AlbumsByGenreComponent } from './pages/albums-by-genre/albums-by-genre.component';
+import { GenreAlbumsComponent } from './components/genre-albums/genre-albums.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { SingleAlbumComponent } from './components/single-album/single-album.com
     RecentAlbumsComponent,
     AllAlbumsComponent,
     AlbumComponent,
-    SingleAlbumComponent
+    SingleAlbumComponent,
+    AlbumsByGenreComponent,
+    GenreAlbumsComponent
   ],
   exports: [
     CategoriesComponent,
@@ -31,7 +35,8 @@ import { SingleAlbumComponent } from './components/single-album/single-album.com
     HomeComponent,
     AlbumsComponent,
     ArtistsComponent,
-    AlbumComponent
+    AlbumComponent,
+    AlbumsByGenreComponent
   ],
   imports: [
     CommonModule,
