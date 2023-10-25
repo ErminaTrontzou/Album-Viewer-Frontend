@@ -1,25 +1,31 @@
-<!-- Categories -->
+<!-- Categories Table -->
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-6 d-flex justify-content-center">
     <div>
       <h3>Categories</h3>
       <br>
-      <div class =" errorMessage" *ngIf="errorMessage">
+      <div class="errorMessage" *ngIf="errorMessage">
         <i class="fas fa-exclamation-triangle"></i>
         <p>{{ errorMessage }}</p>
       </div>
-      <table *ngIf="!errorMessage">
-        <ng-container *ngFor="let row of categories; let i = index">
-          <tr *ngIf="i % 3 === 0">
-            <ng-container *ngFor="let category of categories.slice(i, i + 3); let j = index">
-              <td class="custom-padding">{{ category | uppercase }}</td>
-            </ng-container>
-          </tr>
-        </ng-container>
-      </table>
-    </div>
+      <div class="categories-table" *ngIf="!errorMessage">
+        <div class="row">
+          <div class="col-md-4" *ngFor="let category of categories; let i = index">
+            <a [routerLink]="['/genre', category.name]">
+              <div class="card">
+                <div class="view overlay">
+                  <div class="image-container">
+                    <img class="card-img-top" [src]="category.picture" alt="Category Image">
+                    <h4 class="image-caption">{{ category.name | uppercase }}</h4>
+                  </div>
+                  <br>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    <div class="col-md-3"></div>
   </div>
-  <div class="col-md-3"></div>
-</div>
-<!-- Categories -->
+<!-- Categories Table -->
