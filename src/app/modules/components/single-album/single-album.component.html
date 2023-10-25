@@ -1,20 +1,46 @@
-<div class="errorMessage" *ngIf="albumErrorMessage">
-  <i class="fas fa-exclamation-triangle"></i>
-  <p>{{ albumErrorMessage }}</p>
-</div>
-<h1>Title: {{ album.name }}</h1>
-<p>Artist: {{ album.artistName }}</p>
-<img [src]="album.imagePath" alt="Album Cover">
-<p> Release Date : {{ album.releaseDate }}</p>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="errorMessage" *ngIf="albumErrorMessage">
+      <i class="fas fa-exclamation-triangle"></i>
+      <p>{{ albumErrorMessage }}</p>
+    </div>
+    <div class="album-details">
+      <br> 
+      <h1>{{ album.name }}</h1>
+      <div class="album-info">
+        <img [src]="album.imagePath" alt="Album Cover">
+        <div class="artist-details">
+          <p><strong>Artist:</strong> {{ album.artistName }}</p>
+          <p><strong>Release Date:</strong> {{ album.releaseDate }}</p>
+          <p><strong>Duration:</strong> {{ calculateAlbumDuration() }}</p>
+        </div>
+      </div>
+      <br>
+      <h2>Songs</h2>
 
-
-<h2>Songs:</h2>
-<div class="errorMessage" *ngIf="songErrorMessage">
-  <i class="fas fa-exclamation-triangle"></i>
-  <p>{{ songErrorMessage }}</p>
+      <table class="song-table">
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Song Name</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let song of songs">
+            <td>{{ song.position }}</td>
+            <td>{{ song.name }}</td>
+            <td>{{ calculateDuration(song.duration) }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="errorMessage" *ngIf="songErrorMessage">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p>{{ songErrorMessage }}</p>
+      </div>
+      <br>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
 </div>
-<ul>
-  <li *ngFor="let song of songs">
-    {{ song.name }} - Duration: {{ song.duration }} seconds
-  </li>
-</ul>

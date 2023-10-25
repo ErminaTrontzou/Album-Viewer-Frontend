@@ -29,12 +29,11 @@ export class SingleAlbumComponent implements OnInit {
   }
 
   loadAlbumDetails() {
-    // Use the albumId to fetch album details from your API
     this.singleAlbumService.getAlbumById(this.albumId).subscribe(
       (data) => {
         if (data && data.length > 0) {
           this.album = data[0]; 
-          //console.log(this.album);
+          console.log(this.album);
         }
       },
       (error) => {
@@ -43,18 +42,33 @@ export class SingleAlbumComponent implements OnInit {
   }
 
   loadSongsForAlbum() {
-    // Use the albumId to fetch songs for the specific album
     this.songsService.getSongsForAlbum(this.albumId).subscribe(
       (data) => {
       if(data.length == 0){
         this.songErrorMessage = 'We currently cannot provide you with the songs of this album';
       }
       this.songs = data;
-      //console.log(this.songs);
+      console.log(this.songs);
     },
     (error) => {
       this.songErrorMessage = 'Problem with obtaining songs from backend';
     });
   }
+
+  calculateDuration(duration: number): string {
+    const seconds = duration % 60;
+    const minutes = (duration - seconds) / 60;
+    return `${minutes}:${seconds}`;
+  }
+
+
+  calculateAlbumDuration(): string {
+    let sumSeconds: number = 0;
+    for(let song of this.songs){
+      sumSeconds = sumSeconds + song.duration;
+    }
+    return this.calculateDuration(sumSeconds);
+  }
+  
   
 }
