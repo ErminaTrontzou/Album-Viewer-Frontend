@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AllAlbumsService } from '../../services/all-albums-service';
+import { SortFilterService } from '../../../shared/sort-filter.service';
 
 @Component({
   selector: 'app-all-albums',
@@ -11,7 +12,20 @@ export class AllAlbumsComponent implements OnInit{
   errorMessage: string = '';
   page: number = 1;
   pageSize: number = 6;
-  constructor(private allAlbumsService: AllAlbumsService) { }
+
+  selectedSortBy: string = 'Choose an option';
+
+  sortByOptions: string[] = [
+    'Artist Name (Asc)',
+    'Artist Name (Desc)',
+    'Release Date (Asc)',
+    'Release Date (Desc)',
+    'Choose an option'
+  ];
+
+  constructor(
+    private allAlbumsService: AllAlbumsService,
+    private sortFilterService: SortFilterService) { }
 
   ngOnInit(): void {
     this.fetchAllAlbums();
@@ -27,5 +41,10 @@ export class AllAlbumsComponent implements OnInit{
       }
     )   
   }
+  sortAlbums() {
+    this.allAlbums = this.sortFilterService.sortData(this.allAlbums, this.selectedSortBy);
+  }
+
+
 
 }

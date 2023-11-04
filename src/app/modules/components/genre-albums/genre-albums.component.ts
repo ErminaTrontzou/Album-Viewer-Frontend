@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GenreAlbumsService } from '../../services/genre-albums-service';
+import { SortFilterService } from '../../../shared/sort-filter.service';
+
 
 
 
@@ -17,9 +19,20 @@ export class GenreAlbumsComponent implements OnInit{
   pageSize: number = 6;
   errorMessage: string = ''	;
 
+  selectedSortBy: string = 'Choose an option';
+
+  sortByOptions: string[] = [
+    'Artist Name (Asc)',
+    'Artist Name (Desc)',
+    'Release Date (Asc)',
+    'Release Date (Desc)',
+    'Choose an option'
+  ];
+
   constructor(
     private route: ActivatedRoute,
-    private albumByGenreService: GenreAlbumsService
+    private albumByGenreService: GenreAlbumsService,
+    private sortFilterService: SortFilterService
   ){}
 
   ngOnInit(): void{
@@ -44,4 +57,7 @@ export class GenreAlbumsComponent implements OnInit{
       });
   }
 
+  sortAlbums() {
+    this.genreAlbums = this.sortFilterService.sortData(this.genreAlbums, this.selectedSortBy);
+  }
 }

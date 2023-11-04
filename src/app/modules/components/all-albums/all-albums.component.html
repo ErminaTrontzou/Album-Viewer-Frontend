@@ -4,6 +4,14 @@
       <div>
         <h2>Albums</h2>
         <br>
+        <!-- Dropdown for sorting -->
+        <div class="form-group">
+          <label for="sortSelect">Sort By:</label>
+          <select id="sortSelect" class="form-control" [(ngModel)]="selectedSortBy" (change)="sortAlbums()">
+            <option *ngFor="let option of sortByOptions" [value]="option">{{ option }}</option>
+          </select>
+        </div>
+        
         <div class="errorMessage" *ngIf="errorMessage">
           <i class="fas fa-exclamation-triangle"></i>
           <p>{{ errorMessage }}</p>

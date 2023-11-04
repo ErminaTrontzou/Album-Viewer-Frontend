@@ -6,7 +6,6 @@
     // max-width: 80%;
     padding: 0.5em;
     margin: auto;
-     
   }
   
   .row-cols-2 > * {
@@ -55,4 +54,8 @@
     flex-wrap: wrap;
     margin-top: 20px;
   }
+
+  #sortSelect{
+    width: 200px;
+}
   

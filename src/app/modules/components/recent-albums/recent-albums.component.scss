@@ -1,15 +1,25 @@
-h3{
+h3 {
     text-align: center;
 }
 
-.errorMessage{
+.errorMessage {
     color: red;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center horizontally */
-    margin: 20px auto; /* Optional margin for spacing */
+    align-items: center;
+    margin: 20px auto;
 }
-      
+
 .errorMessage-container i {
-    font-size: 2rem; /* Adjust the size of the icon as needed */
+    font-size: 2rem;
 }
+
+// Media query for screens with a maximum width of 950px
+@media (max-width: 950px) {
+    .row-cols-1.row-cols-md-3.g-4 .col {
+        // Change the number of columns and rows
+        flex: 0 0 50%; // Two albums per row
+        max-width: 50%;
+    }
+}
+

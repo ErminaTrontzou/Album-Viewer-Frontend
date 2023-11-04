@@ -13,6 +13,7 @@ import { AlbumComponent } from './pages/album/album.component';
 import { SingleAlbumComponent } from './components/single-album/single-album.component';
 import { AlbumsByGenreComponent } from './pages/albums-by-genre/albums-by-genre.component';
 import { GenreAlbumsComponent } from './components/genre-albums/genre-albums.component';
+import { FormsModule } from '@angular/forms'; 
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { GenreAlbumsComponent } from './components/genre-albums/genre-albums.com
   imports: [
     CommonModule,
     NgxPaginationModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ]
 })
 export class ModulesModule { }

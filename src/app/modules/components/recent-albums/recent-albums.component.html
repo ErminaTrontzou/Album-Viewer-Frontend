@@ -11,7 +11,6 @@
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col" *ngFor="let recentAlbum of recentAlbums">
           <div class="card h-100">
-            <!-- Add anchor element here with routerLink -->
             <a [routerLink]="['/album', recentAlbum.id]">
               <img [src]="recentAlbum.imagePath" class="card-img-top" alt="Album cover"/>
             </a>
