@@ -45,7 +45,7 @@ export class SingleAlbumComponent implements OnInit {
     this.songsService.getSongsForAlbum(this.albumId).subscribe(
       (data) => {
       if(data.length == 0){
-        this.songErrorMessage = 'We currently cannot provide you with the songs of this album';
+        this.songErrorMessage = 'We currently do not have any songs in this album';
       }
       this.songs = data;
       console.log(this.songs);
