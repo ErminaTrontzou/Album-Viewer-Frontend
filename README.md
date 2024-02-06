@@ -6,6 +6,11 @@ Welcome to the Album Viewer Site, a modern and interactive platform designed to 
 # Demo
 > Add link for live demo
 
+## Project Parts
+- [**Album Viewer Admin Panel**](https://github.com/ErminaTrontzou/Album-Viewer-Admin-Panel)
+- [**Album Viewer Backend**](https://github.com/ErminaTrontzou/Album-Viewer-Backend)
+
+
 ## Overview
 - **Browse Albums**: Discover albums with ease, featuring top recent releases and categorized collections.
 - **Sort & Filter**: Customize your album viewing experience with sorting options and filters based on genre, artist, and release year.
@@ -36,6 +41,6 @@ This project follows a well-organized directory structure for maintainability an
 - `src/app/shared`: Shared components, directives, and pipes.
 
 ## License
-The Album Viewer Site is licensed under the MIT license, promoting open-source collaboration and reuse.
+The Album Viewer Site is licensed under the [MIT license](LICENSE), promoting open-source collaboration and reuse.
 
 
