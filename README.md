@@ -4,13 +4,13 @@
 Welcome to the Album Viewer Site, a modern and interactive platform designed to enhance music discovery. This project is an Angular-based web application that provides an engaging interface for exploring albums across various genres.
 
 # Demo
-### Add link for live demo
+> Add link for live demo
 
 ## Overview
 - **Browse Albums**: Discover albums with ease, featuring top recent releases and categorized collections.
 - **Sort & Filter**: Customize your album viewing experience with sorting options and filters based on genre, artist, and release year.
-- -**Responsive Design**: Accessible on any device, offering a seamless user experience whether you're on mobile or desktop.
-- 
+- **Responsive Design**: Accessible on any device, offering a seamless user experience whether you're on mobile or desktop.
+  
 ## Technologies
 - **Angular**: Leveraging the power of Angular for a responsive and interactive frontend.
 - **MDB UI Kit**: Utilizing Material Design Bootstrap UI kit for stylish and intuitive components.
@@ -24,7 +24,6 @@ git clone https://github.com/ErminaTrontzou/Album-Viewer-Frontend.git
 cd Album-Viewer-Frontend
 npm install
 ng serve
-
 ```
 Visit `http://localhost:4200/` in your web browser to interact with the application.
 
