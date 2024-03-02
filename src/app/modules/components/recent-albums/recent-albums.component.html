@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-3"></div>
-  <div class="col-md-6 d-flex justify-content-center">
+  <div class="col-md-6">
     <div>
       <h3>Recent Albums</h3>
       <br>
@@ -8,9 +8,9 @@
         <i class="fas fa-exclamation-triangle"></i>
         <p>{{ errorMessage }}</p>
       </div>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col" *ngFor="let recentAlbum of recentAlbums">
-          <div class="card h-100">
+      <div class="row">
+        <div class="col" *ngFor="let recentAlbum of recentAlbums; let i = index">
+          <div class="card mb-3">
             <a [routerLink]="['/album', recentAlbum.id]">
               <img [src]="recentAlbum.imagePath" class="card-img-top" alt="Album cover"/>
             </a>
